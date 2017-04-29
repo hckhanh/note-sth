@@ -2,5 +2,10 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "noteSth": {
+    "url": "${MONGODB_DATABASE_URL}",
+    "name": "noteSth",
+    "connector": "mongodb"
   }
 }

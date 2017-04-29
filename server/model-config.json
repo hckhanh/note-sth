@@ -14,28 +14,34 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "noteSth",
+    "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "noteSth",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "noteSth",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "noteSth",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "noteSth",
     "public": false
   },
-  "Message": {
-    "dataSource": null
+  "Account": {
+    "dataSource": "noteSth",
+    "public": true
+  },
+  "Note": {
+    "dataSource": "noteSth",
+    "public": true
   }
 }

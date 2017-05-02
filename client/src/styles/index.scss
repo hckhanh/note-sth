@@ -1,0 +1,33 @@
+@import "~office-ui-fabric-react/dist/sass/Fabric";
+@import "login";
+
+.main-header {
+  background-color : #0078D7;
+  width            : 100px;
+  height           : 100px;
+}
+
+.main-footer {
+  // background-color: #0078d7;
+  // width: 100px;
+  // height: 100px;
+}
+
+.ms-Callout-main {
+  .callout-title {
+    @include ms-font-xl;
+    font-weight : $ms-font-weight-semilight;
+    padding     : 18px 24px 12px;
+  }
+
+  .callout-content {
+    padding : 0 24px 20px;
+    .callout-description {
+      @include ms-fontSize-s;
+      font-weight : $ms-font-weight-light;
+    }
+    .callout-extra-content {
+      margin-top : 20px;
+    }
+  }
+}

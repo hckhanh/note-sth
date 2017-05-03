@@ -9,11 +9,11 @@
   "properties": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "content": {
       "type": "any",
-      "required": true
+      "required": false
     },
     "created": {
       "type": "date",

@@ -1,0 +1,12 @@
+{
+  "execMap": {
+    "js": "node"
+  },
+  "watch": [
+    "server/",
+    "common/models/"
+  ],
+  "env": {
+  },
+  "ext": "js,json"
+}

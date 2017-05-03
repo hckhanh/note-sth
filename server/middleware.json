@@ -13,22 +13,37 @@
     },
     "helmet#xssFilter": {},
     "helmet#frameguard": {
-      "params": [
-        "deny"
-      ]
+      "params": {
+        "action": "deny"
+      }
+    },
+    "helmet#contentSecurityPolicy": {
+      "params": {
+        "directives": {
+          "defaultSrc": [
+            "'self'"
+          ],
+          "styleSrc": [
+            "'self'",
+            "'unsafe-inline'"
+          ],
+          "fontSrc": [
+            "*.sharepointonline.com"
+          ]
+        }
+      }
     },
     "helmet#hsts": {
       "params": {
-        "maxAge": 0,
-        "includeSubdomains": true
+        "maxAge": 63072000,
+        "includeSubdomains": true,
+        "preload": true
       }
     },
     "helmet#hidePoweredBy": {},
     "helmet#ieNoOpen": {},
     "helmet#noSniff": {},
-    "helmet#noCache": {
-      "enabled": false
-    }
+    "helmet#noCache": {}
   },
   "session": {},
   "auth": {},
@@ -40,11 +55,14 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": {}
+  },
   "final": {
     "loopback#urlNotFound": {}
   },
   "final:after": {
+    "./middleware/error": {},
     "strong-error-handler": {}
   }
 }

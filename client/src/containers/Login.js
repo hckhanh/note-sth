@@ -1,7 +1,4 @@
-import { PrimaryButton } from 'office-ui-fabric-react/lib/Button'
-import { Callout, DirectionalHint } from 'office-ui-fabric-react/lib/Callout'
-import { Link } from 'office-ui-fabric-react/lib/Link'
-import { TextField } from 'office-ui-fabric-react/lib/TextField'
+import { Callout, DirectionalHint, Link, PrimaryButton, TextField } from 'office-ui-fabric-react'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'

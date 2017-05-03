@@ -1,4 +1,4 @@
-import { TextField } from 'office-ui-fabric-react/lib/TextField'
+import { TextField } from 'office-ui-fabric-react'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'

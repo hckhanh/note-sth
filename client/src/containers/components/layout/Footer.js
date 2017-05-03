@@ -1,4 +1,4 @@
-import { Link } from 'office-ui-fabric-react/lib/Link'
+import { Link } from 'office-ui-fabric-react'
 import React, { Component } from 'react'
 
 export default class Footer extends Component {

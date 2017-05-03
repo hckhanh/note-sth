@@ -1,5 +1,4 @@
-import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar'
-import { TextField } from 'office-ui-fabric-react/lib/TextField'
+import { CommandBar, TextField } from 'office-ui-fabric-react'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
@@ -28,7 +27,6 @@ export default class NoteEditor extends Component {
   }
 
   handleDismiss = () => {
-    console.log(this.name.value, this.content.value)
     this.props.onDismiss({
       name: this.name.value,
       content: this.content.value

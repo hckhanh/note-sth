@@ -27,8 +27,20 @@
             "'self'",
             "'unsafe-inline'"
           ],
-          "fontSrc": [
-            "*.sharepointonline.com"
+          "script-src": [
+            "'self'",
+            "'unsafe-inline'",
+            "connect.facebook.net"
+          ],
+          "font-src": [
+            "https://static2.sharepointonline.com"
+          ],
+          "img-src": [
+            "'self'",
+            "https://www.facebook.com"
+          ],
+          "frame-src": [
+            "staticxx.facebook.com"
           ]
         }
       }

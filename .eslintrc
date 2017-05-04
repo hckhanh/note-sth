@@ -1,6 +1,16 @@
 {
   "extends": "loopback",
   "rules": {
-    "semi": "off"
+    "semi": "off",
+    "max-len": [
+      "error",
+      120,
+      2
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": "off"
   }
 }

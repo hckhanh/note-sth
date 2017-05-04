@@ -1,9 +1,15 @@
 'use strict'
 
+const { resolve } = require('path')
 const loopback = require('loopback')
 const boot = require('loopback-boot')
+const pug = require('pug')
 
 const app = module.exports = loopback()
+
+// setup view engine
+app.set('views', resolve(__dirname, 'view'))
+app.set('view engine', 'pug')
 
 app.start = function() {
   // start the web server

@@ -37,10 +37,15 @@
           ],
           "img-src": [
             "'self'",
-            "https://www.facebook.com"
+            "https://*.facebook.com"
           ],
           "frame-src": [
             "staticxx.facebook.com"
+          ],
+          "connect-src": [
+            "'self'",
+            "https://rest.ably.io",
+            "wss://realtime.ably.io"
           ]
         }
       }

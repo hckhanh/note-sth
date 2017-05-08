@@ -78,7 +78,43 @@
       "principalId": "demo",
       "permission": "DENY",
       "property": "__delete__notes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getSocketToken"
     }
   ],
-  "methods": {}
+  "methods": {
+    "getSocketToken": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "string",
+          "required": true,
+          "description": "Account id",
+          "http": {
+            "source": "path"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "token",
+          "type": "object",
+          "root": true,
+          "description": "The token object is received from socket service"
+        }
+      ],
+      "description": "Get authentication token from socket service (realtime)",
+      "http": [
+        {
+          "path": "/:id/socketToken",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }

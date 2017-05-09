@@ -4113,9 +4113,9 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
-office-ui-fabric-react@^2.26.0:
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-2.26.0.tgz#3e06bc7ec46745e11c3271112326973ef05d51a4"
+office-ui-fabric-react@^2.27.1:
+  version "2.27.1"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-2.27.1.tgz#835603a636e3c82eb7f4b9dc2c544876c3b64166"
   dependencies:
     "@microsoft/load-themed-styles" "^1.2.2"
     "@uifabric/utilities" ">=1.8.7 <2.0.0"

@@ -1,5 +1,6 @@
 @import "~office-ui-fabric-react/dist/sass/Fabric";
 @import "login";
+@import "home";
 
 .main-header {
   background-color : #0078D7;
@@ -19,7 +20,6 @@
     font-weight : $ms-font-weight-semilight;
     padding     : 18px 24px 12px;
   }
-
   .callout-content {
     padding : 0 24px 20px;
     .callout-description {

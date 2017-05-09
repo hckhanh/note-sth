@@ -1,0 +1,16 @@
+.note-view {
+  width      : 300px;
+  border     : #EAEAEA 1px solid;
+  box-shadow : 0 0 15px -5px rgba(0, 0, 0, 0.4);
+  box-sizing : border-box;
+  word-wrap  : break-word;
+  .title {
+    @include ms-font-xl;
+    font-weight : 400;
+    padding     : 12px 15px 0;
+  }
+  .content {
+    @include ms-font-m;
+    padding : 10px 15px 12px;
+  }
+}

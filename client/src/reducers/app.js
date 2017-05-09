@@ -20,7 +20,7 @@ export default function(state = INITIAL_STATE, { type, user, channel }) {
       return state.set('user', fromJS(user))
     case 'LOGOUT':
       localStorage.removeItem('user')
-      return state.update('user', Map())
+      return state.set('user', Map())
     case 'LOAD_CHANNEL':
       return state.set('channel', channel)
     default:

@@ -14,10 +14,10 @@ export function login(account) {
 
 export function logout() {
   return (dispatch, getState, { api }) => {
-    const state = getState()
+    const { app } = getState()
 
     axios.post(api.LOGOUT(), null, {
-        headers: { 'Authorization': state.app.getIn(['user', 'id']) }
+        headers: { 'Authorization': app.getIn(['user', 'id']) }
       })
       .then(() => {
         dispatch({ type: 'LOGOUT' })
@@ -26,4 +26,8 @@ export function logout() {
         console.error(error)
       })
   }
+}
+
+export function loadChannel(channel) {
+  return { type: 'LOAD_CHANNEL', channel }
 }

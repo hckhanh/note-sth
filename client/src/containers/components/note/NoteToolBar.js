@@ -1,4 +1,12 @@
-import { DefaultButton, Dialog, DialogFooter, DialogType, IconButton, PrimaryButton } from 'office-ui-fabric-react'
+import {
+  CommandButton,
+  DefaultButton,
+  Dialog,
+  DialogFooter,
+  DialogType,
+  IconButton,
+  PrimaryButton
+} from 'office-ui-fabric-react'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -26,8 +34,8 @@ export default class NoteToolBar extends Component {
         subText='After you delete, there is no way to restore the note. For now, the undo feature is developing.'
       >
         <DialogFooter>
-            <PrimaryButton onClick={this.handleDeleteNote} text='Delete' />
-            <DefaultButton onClick={this.closeDeleteDialog} text='Cancel' />
+          <PrimaryButton onClick={this.handleDeleteNote} text='Delete' />
+          <DefaultButton onClick={this.closeDeleteDialog} text='Cancel' />
         </DialogFooter>
       </Dialog>
     )
@@ -46,13 +54,31 @@ export default class NoteToolBar extends Component {
     deleteNote(note.get('id'))
   }
 
+  handleCloseNote = () => {
+    this.props.onClose()
+  }
+
   render() {
-    const { note } = this.props
+    const { note, showDone } = this.props
     const name = note.get('name')
 
     return (
       <div className='tool-bar'>
-        <IconButton iconProps={ { iconName: 'Delete' } } title='Delete note' onClick={this.showDeleteDialog} />
+        <IconButton
+          iconProps={{ iconName: 'Delete' }}
+          title='Delete note'
+          onClick={this.showDeleteDialog}
+        />
+        {
+          showDone && (
+            <CommandButton
+              className='done-button'
+              onClick={this.handleCloseNote}
+            >
+              Done
+            </CommandButton>
+          )
+        }
         {this.generateDeleteDialog()}
       </div>
     )
@@ -60,5 +86,7 @@ export default class NoteToolBar extends Component {
 }
 
 NoteToolBar.propTypes = {
-  note: PropTypes.object.isRequired
+  note: PropTypes.object.isRequired,
+  showDone: PropTypes.bool,
+  onClose: PropTypes.func
 }

@@ -2,6 +2,7 @@ import axios from 'axios'
 
 function publishData(app, action, data) {
   const channel = app.get('channel')
+  data.sessionId = app.get('sessionId')
 
   if (channel) {
     channel.publish(action, data)
@@ -40,7 +41,6 @@ export function createNote(note) {
       .then(({ data: note }) => {
         dispatch({ type: 'ADD_NOTE', note })
         publishData(app, 'add', {
-          sessionId: app.get('sessionId'),
           noteId: note.id
         })
       })
@@ -62,7 +62,6 @@ export function deleteNote(noteId) {
       .then(() => {
         dispatch({ type: 'DELETE_NOTE', noteId })
         publishData(app, 'delete', {
-          sessionId: app.get('sessionId'),
           noteId
         })
       })
@@ -72,9 +71,10 @@ export function deleteNote(noteId) {
   }
 }
 
-export function updateNote({ id: noteId, ...content }) {
+export function updateNote(noteId, content) {
   return (dispatch, getState, { api }) => {
-    const user = getState().app.get('user')
+    const { app } = getState()
+    const user = app.get('user')
 
     axios
       .put(api.UPDATE_NOTE(user.get('userId'), noteId), content, {
@@ -82,6 +82,9 @@ export function updateNote({ id: noteId, ...content }) {
       })
       .then(({ data: note }) => {
         dispatch({ type: 'UPDATE_NOTE', note })
+        publishData(app, 'update', {
+          noteId: note.id
+        })
       })
       .catch((error) => {
         console.error(error)
@@ -97,13 +100,25 @@ export function updateFromClient(action, { noteId }) {
       case 'delete':
         dispatch({ type: 'DELETE_NOTE', noteId })
         break
-      case 'add' :
+      case 'add':
         axios
           .get(api.GET_NOTE(user.get('userId'), noteId), {
             headers: { 'Authorization': user.get('id') }
           })
           .then(({ data: note }) => {
             dispatch({ type: 'ADD_NOTE', note })
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+        break
+      case 'update':
+        axios
+          .get(api.GET_NOTE(user.get('userId'), noteId), {
+            headers: { 'Authorization': user.get('id') }
+          })
+          .then(({ data: note }) => {
+            dispatch({ type: 'UPDATE_NOTE', note })
           })
           .catch((error) => {
             console.error(error)

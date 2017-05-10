@@ -1,16 +1,15 @@
-import { CommandBar, TextField } from 'office-ui-fabric-react'
+import { CommandBar } from 'office-ui-fabric-react'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import NoteEditorContent from './NoteEditorContent'
 
 export default class NoteEditor extends Component {
   state = {
-    showChecklist: false,
-    showDeleteConfirm: false
+    showChecklist: false
   }
 
   componentDidMount() {
-    this.content.focus()
     addEventListener('click', this.handleClickOutside)
   }
 
@@ -27,10 +26,7 @@ export default class NoteEditor extends Component {
   }
 
   handleDismiss = () => {
-    this.props.onDismiss({
-      name: this.name.value,
-      content: this.content.value
-    })
+    this.props.onDismiss(this.content.data)
   }
 
   generateLeftItems = () => {
@@ -69,13 +65,7 @@ export default class NoteEditor extends Component {
   render() {
     return (
       <div ref={node => this.area = node}>
-        <TextField ref={node => this.name = node} placeholder='Title' />
-        <TextField
-          ref={(node) => this.content = node}
-          placeholder='Take a note before you forget it...'
-          multiline={true}
-          autoAdjustHeight={true}
-        />
+        <NoteEditorContent ref={node => this.content = node} />
         <CommandBar
           items={this.generateLeftItems()}
           farItems={this.generateRightItems()}

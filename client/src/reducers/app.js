@@ -5,6 +5,7 @@ import shortid from 'shortid'
 const INITIAL_STATE = Map({
   loading: true,
   user: Map(JSON.parse(localStorage.getItem('user'))),
+  userData: Map(),
   channel: null,
   sessionId: shortid.generate()
 })
@@ -20,9 +21,11 @@ export default function(state = INITIAL_STATE, { type, ...data }) {
 
       localStorage.setItem('user', JSON.stringify(user))
       return state.set('user', fromJS(user))
+    case 'GET_USER_DATA':
+      return state.set('userData', fromJS(data.userData))
     case 'LOGOUT':
       localStorage.removeItem('user')
-      return state.set('user', Map())
+      return state.merge({ user: Map(), userData: Map() })
     case 'LOAD_CHANNEL':
       return state.set('channel', data.channel)
     default:

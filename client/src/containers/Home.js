@@ -1,9 +1,8 @@
-import { PrimaryButton } from 'office-ui-fabric-react'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ably from '../ably'
-import { loadChannel, logout } from '../actions/app'
+import { loadChannel } from '../actions/app'
 import { updateFromClient } from '../actions/home'
 import NoteList from './components/note/NoteList'
 import NoteMaker from './components/note/NoteMaker'
@@ -15,7 +14,6 @@ import NoteMaker from './components/note/NoteMaker'
     channel: state.app.get('channel')
   }),
   dispatch => ({
-    logout: bindActionCreators(logout, dispatch),
     loadChannel: bindActionCreators(loadChannel, dispatch),
     updateFromClient: bindActionCreators(updateFromClient, dispatch)
   })
@@ -41,18 +39,10 @@ export default class Home extends Component {
     this.props.channel.unsubscribe()
   }
 
-  handleLogoutAccount = () => {
-    this.props.logout()
-  }
-
   render() {
     return (
       <div>
         <NoteMaker />
-        <PrimaryButton
-          text='Sign Out'
-          onClick={this.handleLogoutAccount}
-        />
         <NoteList />
       </div>
     )

@@ -1,11 +1,14 @@
 .login {
+  width  : 350px;
+  margin : 250px auto 0;
   .login-button {
     width : 100%;
   }
 
   .more-button {
-    display : block;
-    margin  : 20px auto 0;
+    font-size : 14px;
+    display   : block;
+    margin    : 20px auto 0;
   }
 }
 

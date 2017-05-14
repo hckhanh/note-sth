@@ -55,6 +55,10 @@ module.exports = {
       name: 'vendor',
       minChunks: Infinity,
       filename: 'vendor.js'
+    }),
+    new webpack.ProvidePlugin({
+      Promise: 'promise-polyfill'
+      // Promise polyfill for old browsers
     })
   ]
 }

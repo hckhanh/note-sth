@@ -21,7 +21,7 @@ export default class NoteList extends Component {
 
   componentDidUpdate() {
     this.grid = new Minigrid({
-      container: '.container',
+      container: '.note-container',
       item: '.note-view',
       gutter: 16
     })
@@ -38,7 +38,7 @@ export default class NoteList extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='note-container'>
         {
           this.props.notes.reverse().map(note => <NoteView key={note.get('id')} note={note} />)
         }

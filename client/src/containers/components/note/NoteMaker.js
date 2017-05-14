@@ -29,17 +29,17 @@ export default class NoteMaker extends Component {
 
   render() {
     return (
-      <div>
-      {
-        !this.state.showEditor ? (
-          <TextField
-            onFocus={this.handleOpenEditor}
-            placeholder='Take a note before you forget it...'
-          />
-        ) : (
-          <NoteEditor onDismiss={this.handleExitEditor} />
-        )
-      }
+      <div className='note-maker'>
+        {
+          !this.state.showEditor ? (
+            <TextField
+              onFocus={this.handleOpenEditor}
+              placeholder='Take a note before you forget it...'
+            />
+          ) : (
+            <NoteEditor onDismiss={this.handleExitEditor} />
+          )
+        }
       </div>
     )
   }

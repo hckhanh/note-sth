@@ -48,7 +48,7 @@
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
-    "remarkable": "^1.7.1",
+    "remarkable": "^2.0.0",
     "sass-loader": "^6.0.5",
     "serve-favicon": "^2.0.1",
     "shortid": "^2.2.8",

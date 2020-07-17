@@ -24,7 +24,7 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "css-loader": "^0.28.1",
-    "extract-text-webpack-plugin": "^2.1.0",
+    "extract-text-webpack-plugin": "^2.1.1",
     "helmet": "^3.6.0",
     "immutable": "^3.8.1",
     "less": "^2.7.2",
@@ -54,7 +54,7 @@
     "shortid": "^2.2.8",
     "strong-error-handler": "^2.0.0",
     "style-loader": "^0.17.0",
-    "webpack": "^2.5.1",
+    "webpack": "^3.11.0",
     "webpack-manifest-plugin": "^1.1.0",
     "webpack-merge": "^4.1.0"
   },

@@ -52,7 +52,7 @@
     "sass-loader": "^6.0.5",
     "serve-favicon": "^2.0.1",
     "shortid": "^2.2.8",
-    "strong-error-handler": "^2.0.0",
+    "strong-error-handler": "^3.5.0",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
     "webpack-manifest-plugin": "^1.1.0",
